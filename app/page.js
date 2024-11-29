@@ -3,7 +3,7 @@ import { HiArrowLongRight } from "react-icons/hi2";
 
 export default function Home() {
   return (
-    <div className="flex md:flex-row flex-col-reverse justify-between items-center xl:w-[88%] w-[92%] mx-auto">
+    <div className="flex md:flex-row flex-col-reverse justify-between items-center">
       <div className="xl:w-[600px] lg:w-[480px] md:w-[380px] sm:[400px] w-fit mx-4">
         <h2 className="font-firacode text-[24px] font-semibold">
           Hello there!
@@ -22,12 +22,7 @@ export default function Home() {
         </div>
       </div>
       <div className="relative h-80 w-80 md:h-96 md:w-96 border-4 border-t-0 border-light-border rounded-full mt-20 mb-10">
-        <Image
-          src="/Me2.jpg"
-          alt="My photo"
-          fill
-          className="rounded-full p-2"
-        />
+        <Image src="/Me.jpg" alt="My photo" fill className="rounded-full p-2" />
       </div>
     </div>
   );
