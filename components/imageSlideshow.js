@@ -14,12 +14,12 @@ export default function ImageSlideshow() {
   }, [currentImageIndex]);
 
   return (
-    <div className="md:col-span-5 lg:col-span-5 relative md:h-[400px] h-[300px] w-full">
+    <div className="md:col-span-5 lg:col-span-5 relative h-[400px] md:w-full w-[80%] mx-auto">
       <Image
         src={`/Me${currentImageIndex}.jpg`}
         alt="My photos"
         fill
-        className="border rounded-lg"
+        className="border border-none rounded-lg"
       />
     </div>
   );

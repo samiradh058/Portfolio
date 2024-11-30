@@ -2,7 +2,8 @@ import ImageSlideshow from "@/components/imageSlideshow";
 import Image from "next/image";
 
 export default function About() {
-  const listStyle = "border px-2 py-1 bg-light-secondary rounded-md shadow-md";
+  const listStyle =
+    "border px-2 py-1 bg-light-secondary dark:bg-dark-secondary rounded-md shadow-md border-light-border dark:border-dark-border";
 
   const certificates = [
     {
@@ -20,10 +21,7 @@ export default function About() {
   ];
 
   return (
-    <div className="mt-4">
-      <h2 className="text-[32px] underline underline-offset-8 font-bold">
-        About Me:
-      </h2>
+    <div className="mt-12 text-light-text dark:text-dark-text">
       <div className="md:grid md:grid-cols-12 mt-8 flex flex-col-reverse">
         <div className="md:col-span-7 lg:col-span-6 mr-4">
           <h1 className="text-[48px] font-bold mt-8">
@@ -36,7 +34,7 @@ export default function About() {
             mindset make me an aspiring technopreneur.
           </p>
           <div className="flex sm:flex-row flex-col gap-1 justify-between px-2 mt-8">
-            <ul className="space-y-2 sm: mx-0 mx-2">
+            <ul className="space-y-2 sm:mx-0 mx-2">
               <li>
                 <span className="font-semibold">Birthday: </span>2001/10/16
               </li>
@@ -67,7 +65,7 @@ export default function About() {
 
         <ImageSlideshow />
       </div>
-      <div className="mt-8 lg:mt-0 w-fit ml-2 border border-light-accent bg-light-accent rounded-lg text-light-secondary px-2 py-1">
+      <div className="mt-8 lg:mt-0 w-fit ml-2 bg-light-accent dark:bg-dark-accent rounded-lg text-light-secondary px-2 py-1">
         {/* <a href="/Samir-Adhikari-CV.pdf" download="Samir-Adhikari-CV.pdf">
           Download CV
         </a> */}
@@ -128,10 +126,12 @@ export default function About() {
               <li className={listStyle}>Bootstrap</li>
               <li className={listStyle}>Tailwind</li>
               <li className={listStyle}>React</li>
+              <li className={listStyle}>Typescript</li>
               <li className={listStyle}>Next.js</li>
             </ul>
             <ul className="flex gap-4 justify-center my-3">
               <li className={listStyle}>Git</li>
+              <li className={listStyle}>Framer Motion</li>
               <li className={listStyle}>Rest APIs</li>
               <li className={listStyle}>Supabase</li>
             </ul>
@@ -139,12 +139,12 @@ export default function About() {
         </div>
       </div>
 
-      <div className="my-24">
+      <div className="mb-12 mt-24">
         <h2 className="font-semibold text-[24px]">Certificates:</h2>
         <div className="grid sm:grid-cols-12 gap-8 mt-8">
           {certificates.map((certificate) => (
             <div
-              className="md:col-span-4 sm:col-span-6 col-span-12 border border-light-border bg-light-secondary shadow-sm"
+              className="md:col-span-4 sm:col-span-6 col-span-12 border border-light-border dark:border-dark-border shadow-sm"
               key={certificate.id}
             >
               <div className="relative h-64 w-full">
