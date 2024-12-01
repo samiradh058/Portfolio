@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 body {
   font-family: "Poppins", sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@keyframes custom-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+.animate-custom-bounce {
+  animation: custom-bounce 1s ease-in-out infinite;
 }

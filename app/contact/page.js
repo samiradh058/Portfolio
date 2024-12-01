@@ -8,7 +8,7 @@ import {
 export default function Contact() {
   return (
     <div className="flex md:flex-row flex-col sm:justify-around mt-12 text-light-text dark:text-dark-text justify-center items-center">
-      <div className="font-bold lg:text-[92px] md:text-[84px] sm:text-[72px] text-[52px] space-y-[-24px] font-firacode md:my-auto mt-8 items-center">
+      <div className="font-bold lg:text-[92px] md:text-[84px] sm:text-[72px] text-[52px] space-y-[-24px] font-firacode md:my-auto mt-8 items-center animate-custom-bounce">
         <div className="flex flex-col justify-center">
           <div className="flex flex-col xs:flex-row xs:justify-center md:flex-col items-center mt-[-24px]">
             <p className="">Want to&nbsp;</p>
@@ -42,14 +42,14 @@ export default function Contact() {
         </a>
         <div className="flex row-span-5 justify-between md:mt-0 mt-4">
           <ul className="flex flex-col space-y-4">
-            <li className="flex items-center gap-2  text-[20px] font-medium hover:scale-105">
+            <li className="flex items-center gap-2  text-[20px] font-semibold hover:scale-105">
               <HiMiniPhone />
               +977 9846983849
             </li>
             <li>
               <a
                 href="https://www.facebook.com/samir.adhikari.581187"
-                className="flex items-center gap-2  text-[20px] font-medium hover:text-light-accentSecondary hover:dark:text-dark-accentSecondary hover:scale-105"
+                className="flex items-center gap-2  text-[20px] font-semibold hover:text-light-accentSecondary hover:dark:text-dark-accentSecondary hover:scale-105"
               >
                 <IoLogoFacebook />
                 Facebook
@@ -59,14 +59,14 @@ export default function Contact() {
           <ul className="flex flex-col space-y-4">
             <a
               href="https://www.instagram.com/samir_adhk/"
-              className="flex items-center gap-2 text-[20px] font-medium hover:text-light-accent hover:scale-105"
+              className="flex items-center gap-2 text-[20px] font-semibold hover:text-light-accent hover:scale-105"
             >
               <IoLogoInstagram />
               Instagram
             </a>
             <a
               href="https://www.linkedin.com/in/samir-adhikari-32ba07282/"
-              className="flex items-center gap-2 text-[20px] font-medium hover:text-light-accent hover:scale-105"
+              className="flex items-center gap-2 text-[20px] font-semibold hover:text-light-accent hover:scale-105"
             >
               <IoLogoLinkedin />
               Linkedin

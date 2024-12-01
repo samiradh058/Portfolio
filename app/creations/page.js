@@ -1,5 +1,32 @@
+"use client";
+
 import Image from "next/image";
 import { HiArrowLongRight } from "react-icons/hi2";
+import { motion } from "framer-motion";
+
+const ProjectVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      type: "spring",
+      when: "beforeChildren",
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const childVariants = {
+  hidden: { opacity: 0, x: "50vw" },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "spring",
+      stiffness: 50,
+    },
+  },
+};
 
 export default function Creations() {
   const projects = [
@@ -23,11 +50,18 @@ export default function Creations() {
   ];
 
   return (
-    <div className="mt-16 text-light-text dark:text-dark-text">
+    <motion.div
+      variants={ProjectVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="mt-16 text-light-text dark:text-dark-text"
+    >
       <h2 className="text-[32px] font-bold">My Latest Noteworthy Projects:</h2>
       <div className="grid md:grid-cols-12 gap-8 mb-12">
         {projects.map((project) => (
-          <div
+          <motion.div
+            variants={childVariants}
             className="sm:col-span-6 col-span-12 border border-light-border dark:border-dark-border shadow-sm mt-8"
             key={project.id}
           >
@@ -43,9 +77,9 @@ export default function Creations() {
               Github &nbsp;
               <HiArrowLongRight />
             </a>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }

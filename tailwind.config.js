@@ -7,6 +7,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        "rotate-border": "rotate-border 2s linear infinite",
+      },
+      keyframes: {
+        "rotate-border": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+      },
       screens: {
         xs: "475px",
       },
