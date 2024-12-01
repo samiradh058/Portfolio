@@ -32,7 +32,7 @@ export default function ImageSlideshow() {
       variants={ImageVariants}
       initial="hidden"
       animate="visible"
-      className="md:col-span-5 lg:col-span-5 relative h-[440px] md:w-full w-[80%] sm:w-[60%] mx-auto"
+      className="md:col-span-4 lg:col-span-4 relative h-[440px] md:w-full w-[80%] sm:w-[60%] mx-auto"
     >
       <Suspense fallback={<p>Loading Images...</p>}>
         <Image

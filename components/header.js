@@ -9,15 +9,18 @@ import { useDarkMode } from "@/context/DarkModeContext";
 import { motion } from "framer-motion";
 
 const iconVariants = {
-  open: { rotate: 90, opacity: 1 },
-  closed: { rotate: 0, opacity: 1 },
+  animate: { rotate: 90, opacity: 1 },
+  initial: { rotate: 0, opacity: 1 },
 };
 
 const navVariant = {
-  close: { y: -100, opacity: 0 },
-  open: { y: 0, opacity: 1 },
-  transition: {
-    duration: 2,
+  initial: { y: -10 },
+  animate: {
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeInOut",
+    },
   },
 };
 
@@ -32,36 +35,41 @@ export default function Header() {
     setShowNav(!showNav);
   }
 
-  function closeHam() {
+  function initialHam() {
     setShowNav(false);
   }
 
   return (
-    <nav className="flex justify-between w-[92%] mx-auto items-center z-10 bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text">
-      <div className="relative sm:h-28 sm:w-24 h-20 w-16">
-        <Image src="/Me4.png" alt="Logo" fill required />
-      </div>
+    <nav className="flex justify-between w-[96%] mx-auto items-center z-10 bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text">
+      <Link href="/" className="relative sm:h-32 sm:w-28 h-20 w-16">
+        <Image src="/Krishna.png" alt="Logo" fill required />
+      </Link>
 
       <div className="sm:hidden text-[24px]" onClick={handleClickHam}>
         <motion.div
           variants={iconVariants}
-          animate={showNav ? "open" : "closed"}
+          animate={showNav ? "animate" : "initial"}
         >
           {!showNav ? <HiBars3 /> : <HiMiniXMark />}
         </motion.div>
       </div>
 
       <motion.div
+        key={showNav}
         className={`${
-          showNav ? "block" : "hidden"
-        } absolute left-0 min-h-fit pt-4 pb-2 top-[16%] items-center flex px-6 w-full sm:flex sm:static sm:w-auto sm:border-none border border-light-border dark:border-dark-border rounded-lg shadow-xl sm:shadow-none border-t-0 bg-light-bg dark:bg-dark-bg`}
+          showNav ? "block bg-light-bg dark:bg-dark-bg" : "hidden"
+        } absolute left-0 min-h-fit pt-4 pb-2 top-[16%] items-center flex px-6 w-full sm:flex sm:static sm:w-auto sm:border-none border border-light-border dark:border-dark-border rounded-b-lg shadow-xl sm:shadow-none border-t-0`}
+        variants={navVariant}
+        initial="initial"
+        animate="animate"
+        exit="initial"
       >
         <ul className="flex flex-col sm:flex-row sm:gap-[4vw] gap-4 font-semibold text-[16px]">
           <li
             className={`hover:text-light-accentSecondary hover:dark:text-dark-accentSecondary ${
               path === "/" ? "text-light-accent dark:text-dark-accent" : ""
             }`}
-            onClick={closeHam}
+            onClick={initialHam}
           >
             <Link href="/">Home</Link>
           </li>
@@ -71,7 +79,7 @@ export default function Header() {
                 ? "text-light-accent dark:text-dark-accent"
                 : ""
             }`}
-            onClick={closeHam}
+            onClick={initialHam}
           >
             <Link href="/about">About</Link>
           </li>
@@ -81,7 +89,7 @@ export default function Header() {
                 ? "text-light-accent dark:text-dark-accent"
                 : ""
             }`}
-            onClick={closeHam}
+            onClick={initialHam}
           >
             <Link href="/creations">Creations</Link>
           </li>
@@ -91,7 +99,7 @@ export default function Header() {
                 ? "text-light-accent dark:text-dark-accent"
                 : ""
             }`}
-            onClick={closeHam}
+            onClick={initialHam}
           >
             <Link href="/contact">Contact</Link>
           </li>

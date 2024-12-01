@@ -1,19 +1,17 @@
 import Certificates from "@/components/certificates";
 import DownloadCV from "@/components/downloadCV";
 import Education from "@/components/education";
-import ImageSlideshow from "@/components/imageSlideshow";
-import Mottos from "@/components/mottos";
 import Skills from "@/components/skills";
 
 export default function About() {
   return (
     <div className="mt-12 text-light-text dark:text-dark-text">
-      <div className="md:grid md:grid-cols-12 mt-8 flex flex-col items-center justify-between">
-        <div className="md:col-span-7 lg:col-span-6 mr-4">
+      <div className="flex justify-center">
+        <div className="">
           <h1 className="text-[48px] font-bold mt-8">
             It&apos;s <span className="text-light-accent">Samir</span>
           </h1>
-          <p className="text-justify sm:text-[18px] text-[16px] indent-4 mt-4">
+          <p className="text-justify sm:text-[20px] text-[18px] indent-4 mt-4">
             A 3rd-year computer science student passionate about frontend
             development and creating visually appealing webpages with excellent
             user experiences. My strong communication skills and problem solving
@@ -48,9 +46,6 @@ export default function About() {
           </div>
         </div>
         <div className="lg:col-span-1 hidden lg:block"></div>
-
-        {/* <ImageSlideshow /> */}
-        <Mottos />
       </div>
       <DownloadCV />
 

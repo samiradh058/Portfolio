@@ -2,13 +2,12 @@ import Certificates from "@/components/certificates";
 import DownloadCV from "@/components/downloadCV";
 import Education from "@/components/education";
 import ImageSlideshow from "@/components/imageSlideshow";
-import Mottos from "@/components/mottos";
 import Skills from "@/components/skills";
 
 export default function About() {
   return (
     <div className="mt-12 text-light-text dark:text-dark-text">
-      <div className="md:grid md:grid-cols-12 mt-8 flex flex-col items-center justify-between">
+      <div className="md:grid md:grid-cols-12 mt-8 flex flex-col-reverse">
         <div className="md:col-span-7 lg:col-span-6 mr-4">
           <h1 className="text-[48px] font-bold mt-8">
             It&apos;s <span className="text-light-accent">Samir</span>
@@ -49,8 +48,7 @@ export default function About() {
         </div>
         <div className="lg:col-span-1 hidden lg:block"></div>
 
-        {/* <ImageSlideshow /> */}
-        <Mottos />
+        <ImageSlideshow />
       </div>
       <DownloadCV />
 

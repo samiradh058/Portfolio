@@ -10,8 +10,6 @@ const ProjectVariants = {
   visible: {
     opacity: 1,
     transition: {
-      type: "spring",
-      when: "beforeChildren",
       staggerChildren: 0.1,
     },
   },
@@ -25,6 +23,7 @@ const childVariants = {
     transition: {
       type: "spring",
       stiffness: 50,
+      damping: 10,
     },
   },
 };

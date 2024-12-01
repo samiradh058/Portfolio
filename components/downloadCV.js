@@ -17,7 +17,7 @@ export default function DownloadCV() {
     <motion.div
       variants={buttonVariants}
       whileHover="hover"
-      className="w-fit sm:mt-[-20px]"
+      className="w-fit lg:mt-10 flex justify-start items-start"
     >
       <div className="mt-8 lg:mt-0 w-fit ml-2 bg-light-accent dark:bg-dark-accent rounded-lg text-light-secondary px-2 py-1">
         <a href="Samir-Adhikari-CV.pdf" download>
