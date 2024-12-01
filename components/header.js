@@ -39,7 +39,7 @@ export default function Header() {
   return (
     <nav className="flex justify-between w-[92%] mx-auto items-center z-10 bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text">
       <div className="relative sm:h-28 sm:w-24 h-20 w-16">
-        <Image src="/Me4.png" alt="Logo" fill />
+        <Image src="/Me4.png" alt="Logo" fill required />
       </div>
 
       <div className="sm:hidden text-[24px]" onClick={handleClickHam}>

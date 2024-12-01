@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const ImageVariants = {
@@ -34,12 +34,14 @@ export default function ImageSlideshow() {
       animate="visible"
       className="md:col-span-5 lg:col-span-5 relative h-[440px] md:w-full w-[80%] sm:w-[60%] mx-auto"
     >
-      <Image
-        src={`/Me${currentImageIndex}.jpg`}
-        alt="My photos"
-        fill
-        className="border border-none rounded-lg"
-      />
+      <Suspense fallback={<p>Loading Images...</p>}>
+        <Image
+          src={`/Me${currentImageIndex}.jpg`}
+          alt="My photos"
+          fill
+          className="border border-none rounded-lg"
+        />
+      </Suspense>
     </motion.div>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Suspense } from "react";
 
 const CertificateVariants = {
   hidden: { opacity: 0 },
@@ -59,11 +60,13 @@ export default function Certificates() {
             key={certificate.id}
           >
             <div className="relative h-64 w-full">
-              <Image
-                src={`/${certificate.image}`}
-                alt="Certificate Image"
-                fill
-              />
+              <Suspense fallback={<p>Loading Certificate...</p>}>
+                <Image
+                  src={`/${certificate.image}`}
+                  alt="Certificate Image"
+                  fill
+                />
+              </Suspense>
             </div>
             <h3 className="p-1 text-[18px] mt-2">{certificate.title}</h3>
           </motion.div>

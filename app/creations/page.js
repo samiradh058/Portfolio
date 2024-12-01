@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { HiArrowLongRight } from "react-icons/hi2";
 import { motion } from "framer-motion";
+import { Suspense } from "react";
 
 const ProjectVariants = {
   hidden: { opacity: 0 },
@@ -66,7 +67,9 @@ export default function Creations() {
             key={project.id}
           >
             <div className="relative h-80 w-full">
-              <Image src={`/${project.image}`} alt="Project Image" fill />
+              <Suspense fallback={<p>Loading Project Image</p>}>
+                <Image src={`/${project.image}`} alt="Project Image" fill />
+              </Suspense>
             </div>
             <h3 className="mt-4 text-[20px] font-bold px-2">{project.title}</h3>
             <p className="text-justify my-2 px-2">{project.description}</p>

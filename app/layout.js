@@ -2,6 +2,11 @@ import "@/app/globals.css";
 import Header from "@/components/header";
 import { DarkModeProvider } from "@/context/DarkModeContext";
 
+export const metadata = {
+  title: "Samir Adhikari",
+  description: "Personal portfolio website of Samir Adhikari",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
