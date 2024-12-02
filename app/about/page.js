@@ -1,48 +1,50 @@
 import Certificates from "@/components/certificates";
 import DownloadCV from "@/components/downloadCV";
 import Education from "@/components/education";
-import ImageSlideshow from "@/components/imageSlideshow";
 import Mottos from "@/components/mottos";
+import Name from "@/components/name";
 import Skills from "@/components/skills";
 
-export default function About() {
+import { getDetails } from "@/lib/getDetails";
+
+export default async function About() {
+  const { data, error } = await getDetails();
+
   return (
-    <div className="mt-12 text-light-text dark:text-dark-text">
-      <div className="md:grid md:grid-cols-12 mt-8 flex flex-col items-center justify-between">
-        <div className="md:col-span-7 lg:col-span-6 mr-4">
-          <h1 className="text-[48px] font-bold mt-8">
-            It&apos;s <span className="text-light-accent">Samir</span>
-          </h1>
+    <div className="items-center">
+      <div className="md:grid md:grid-cols-12 flex flex-col items-center justify-center">
+        <div className="md:col-span-7 lg:col-span-7 mr-4">
+          <Name name={"Samir"} />
           <p className="text-justify sm:text-[18px] text-[16px] indent-4 mt-4">
-            A 3rd-year computer science student passionate about frontend
-            development and creating visually appealing webpages with excellent
-            user experiences. My strong communication skills and problem solving
-            mindset make me an aspiring technopreneur.
+            {data[0].description}
           </p>
           <div className="flex sm:flex-row flex-col gap-1 justify-between px-2 mt-8">
             <ul className="space-y-2 sm:mx-0 mx-2">
               <li>
-                <span className="font-semibold">Birthday: </span>2001/10/16
+                <span className="font-semibold">Birthday: </span>
+                {data[0].birthday}
               </li>
               <li>
-                <span className="font-semibold">Address: </span>Lunkhu
-                Deurali-5, Parbat
+                <span className="font-semibold">Address: </span>
+                {data[0].address}
               </li>
               <li>
                 <span className="font-semibold">Current Address: </span>
-                Pokhara-17, Birauta
+                {data[0].current_address}
               </li>
             </ul>
             <ul className="space-y-2 sm:mx-0 mx-2">
               <li>
                 <span className="font-semibold">Email: </span>
-                adhikarisamir68@gmail.com
+                {data[0].email}
               </li>
               <li>
-                <span className="font-semibold">Phone: </span>+977 9846983849
+                <span className="font-semibold">Phone: </span>
+                {data[0].phone}
               </li>
               <li>
-                <span className="font-semibold">Freelance: </span>Available
+                <span className="font-semibold">Freelance: </span>
+                {data[0].freelance ? "Avaibable" : "Not Available"}
               </li>
             </ul>
           </div>

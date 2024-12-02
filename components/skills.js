@@ -1,6 +1,8 @@
 "use client";
 
+import { useTheme } from "@/context/ColorContext";
 import { motion } from "framer-motion";
+import { colors } from "./colors";
 
 const SkillsVariants = {
   hidden: { opacity: 0 },
@@ -23,8 +25,17 @@ const childVariants = {
 };
 
 export default function Skills() {
-  const listStyle =
-    "border px-2 py-1 bg-light-secondary dark:bg-dark-secondary rounded-md shadow-md border-light-border dark:border-dark-border";
+  const { isDark, toggleDarkMode, themeColor } = useTheme();
+
+  const mode = isDark ? "dark" : "light";
+  const currentTheme = themeColor;
+
+  const currentColors = colors[mode][currentTheme];
+  const listStyle = "border px-2 py-1 rounded-md shadow-md";
+  const listDynamicStyle = {
+    backgroundColor: currentColors.secondary,
+    borderColor: currentColors.border,
+  };
 
   return (
     <motion.div
@@ -38,44 +49,92 @@ export default function Skills() {
         <h2 className="font-semibold text-[24px]">My Skills</h2>
         <div className="mt-4">
           <ul className="flex gap-4 justify-center my-4">
-            <motion.li className={listStyle} variants={childVariants}>
+            <motion.li
+              className={listStyle}
+              style={listDynamicStyle}
+              variants={childVariants}
+            >
               HTML
             </motion.li>
-            <motion.li className={listStyle} variants={childVariants}>
+            <motion.li
+              className={listStyle}
+              style={listDynamicStyle}
+              variants={childVariants}
+            >
               CSS
             </motion.li>
-            <motion.li className={listStyle} variants={childVariants}>
+            <motion.li
+              className={listStyle}
+              style={listDynamicStyle}
+              variants={childVariants}
+            >
               JavaScript
             </motion.li>
           </ul>
           <ul className="flex gap-4 justify-center my-4">
-            <motion.li className={listStyle} variants={childVariants}>
+            <motion.li
+              className={listStyle}
+              style={listDynamicStyle}
+              variants={childVariants}
+            >
               Bootstrap
             </motion.li>
-            <motion.li className={listStyle} variants={childVariants}>
+            <motion.li
+              className={listStyle}
+              style={listDynamicStyle}
+              variants={childVariants}
+            >
               Tailwind
             </motion.li>
-            <motion.li className={listStyle} variants={childVariants}>
+            <motion.li
+              className={listStyle}
+              style={listDynamicStyle}
+              variants={childVariants}
+            >
               React
             </motion.li>
-            <motion.li className={listStyle} variants={childVariants}>
+            <motion.li
+              className={listStyle}
+              style={listDynamicStyle}
+              variants={childVariants}
+            >
               Typescript
             </motion.li>
-            <motion.li className={listStyle} variants={childVariants}>
+            <motion.li
+              className={listStyle}
+              style={listDynamicStyle}
+              variants={childVariants}
+            >
               Next.js
             </motion.li>
           </ul>
           <ul className="flex gap-4 justify-center my-4">
-            <motion.li className={listStyle} variants={childVariants}>
+            <motion.li
+              className={listStyle}
+              style={listDynamicStyle}
+              variants={childVariants}
+            >
               Git
             </motion.li>
-            <motion.li className={listStyle} variants={childVariants}>
+            <motion.li
+              className={listStyle}
+              style={listDynamicStyle}
+              variants={childVariants}
+            >
               Framer Motion
             </motion.li>
-            <motion.li className={listStyle} variants={childVariants}>
+            <motion.li
+              className={listStyle}
+              style={listDynamicStyle}
+              variants={childVariants}
+            >
               Rest APIs
             </motion.li>
-            <motion.li className={listStyle} variants={childVariants}>
+            <motion.li
+              className={listStyle}
+              style={listDynamicStyle}
+              variants={childVariants}
+            >
               Supabase
             </motion.li>
           </ul>

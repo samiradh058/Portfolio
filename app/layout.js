@@ -1,6 +1,7 @@
 import "@/app/globals.css";
+import Children from "@/components/children";
 import Header from "@/components/header";
-import { DarkModeProvider } from "@/context/DarkModeContext";
+import { ThemeProvider } from "@/context/ColorContext";
 
 export const metadata = {
   title: "Samir Adhikari",
@@ -10,16 +11,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <DarkModeProvider>
-        <body className="bg-light-bg dark:bg-dark-bg h-screen grid grid-rows-8">
-          <div className="grid row-span-1">
-            <Header />
-          </div>
-          <div className="grid row-span-7 xl:w-[88%] w-[92%] mx-auto">
-            {children}
-          </div>
+      <ThemeProvider>
+        <body className="flex flex-col justify-center items-center">
+          <Header />
+          <Children>{children}</Children>
         </body>
-      </DarkModeProvider>
+      </ThemeProvider>
     </html>
   );
 }

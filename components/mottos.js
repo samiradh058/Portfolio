@@ -1,10 +1,36 @@
+"use client";
+
+import { useTheme } from "@/context/ColorContext";
+import { colors } from "./colors";
+
 export default function Mottos() {
+  const { isDark, themeColor } = useTheme();
+
+  const mode = isDark ? "dark" : "light";
+  const currentTheme = themeColor;
+
+  const currentColors = colors[mode][currentTheme];
+
   return (
-    <div className="flex md:justify-between justify-around flex-row md:flex-col w-full md:col-span-5 px-4 mt-6 md:mt-2">
-      <div className="self-start border-4 border-light-accent dark:border-dark-accent rounded-full w-44 h-44 flex items-center p-4 text-center text-[24px] font-semibold animate-bounce">
+    <div className="flex md:justify-between justify-around flex-row md:flex-col w-full md:col-span-5 lg:col-span-4 p-4">
+      <div
+        className="self-start rounded-full sm:w-44 sm:h-44 w-40 h-40 flex items-center p-4 text-center text-[24px] font-semibold animate-custom-bounce"
+        style={{
+          border: "4px solid",
+          borderColor: currentColors.accent,
+          borderRadius: "50%",
+        }}
+      >
         Learn, adapt and grow
       </div>
-      <div className="mb-[-60px] md:mb-0 self-end border-4 border-light-accent dark:border-dark-accent rounded-full w-44 h-44 flex items-center p-4 text-center text-[24px] font-semibold animate-bounce">
+      <div
+        className="self-end rounded-full sm:w-44 sm:h-44 w-40 h-40 flex items-center p-4 text-center text-[24px] font-semibold animate-custom-bounce"
+        style={{
+          border: "4px solid",
+          borderColor: currentColors.accent,
+          borderRadius: "50%",
+        }}
+      >
         Code more, worry less.
       </div>
     </div>

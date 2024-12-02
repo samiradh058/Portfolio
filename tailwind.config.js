@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -25,22 +26,44 @@ module.exports = {
       },
       colors: {
         light: {
-          bg: "#E9F1FA",
-          secondary: "#FFFFFF",
-          text: "#004D6D",
-          accent: "#00ABE4",
-          accentSecondary: "#0077A5",
-          border: "#D1E3F2",
-          error: "#E63946",
+          blue: {
+            bg: "#E9F1FA", // Light Blue background
+            secondary: "#FFFFFF", // White background for secondary elements
+            text: "#004D6D", // Dark blue text
+            accent: "#00ABE4", // Light blue accent
+            accentSecondary: "#0077A5", // Darker blue accent
+            border: "#D1E3F2", // Light blue border
+            error: "#E63946", // Red for errors
+          },
+          green: {
+            bg: "#E3F9F1", // Light Green background
+            secondary: "#FFFFFF", // White background for secondary elements
+            text: "#006B3F", // Dark green text
+            accent: "#32A852", // Light green accent
+            accentSecondary: "#23723C", // Darker green accent
+            border: "#A0D1B2", // Light green border
+            error: "#E63946", // Red for errors
+          },
         },
         dark: {
-          bg: "#004D6D",
-          secondary: "#0077A5",
-          text: "#E9F1FA",
-          accent: "#00ABE4",
-          accentSecondary: "#6EC8F8",
-          border: "#374151",
-          error: "#EF4444",
+          blue: {
+            bg: "#004D6D", // Dark Blue background
+            secondary: "#0077A5", // Darker blue for secondary elements
+            text: "#E9F1FA", // Light blue text
+            accent: "#00ABE4", // Light blue accent
+            accentSecondary: "#6EC8F8", // Lighter blue accent
+            border: "#374151", // Dark border for dark mode
+            error: "#EF4444", // Red for errors
+          },
+          green: {
+            bg: "#006B3F", // Dark Green background
+            secondary: "#23723C", // Darker green for secondary elements
+            text: "#E3F9F1", // Light green text
+            accent: "#32A852", // Light green accent
+            accentSecondary: "#85D18E", // Lighter green accent
+            border: "#374151", // Dark border for dark mode
+            error: "#EF4444", // Red for errors
+          },
         },
       },
     },

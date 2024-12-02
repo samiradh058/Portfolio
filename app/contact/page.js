@@ -1,3 +1,6 @@
+import Build from "@/components/build";
+import Email from "@/components/email";
+import Links from "@/components/links";
 import { HiMiniPhone } from "react-icons/hi2";
 import {
   IoLogoFacebook,
@@ -7,73 +10,54 @@ import {
 
 export default function Contact() {
   return (
-    <div className="flex md:flex-row flex-col sm:justify-around mt-12 text-light-text dark:text-dark-text justify-center items-center">
-      <div className="font-bold lg:text-[92px] md:text-[84px] sm:text-[72px] text-[52px] space-y-[-24px] font-firacode md:my-auto mt-8 items-center animate-custom-bounce">
+    <div className="flex md:flex-row flex-col sm:justify-around justify-center items-center sm:pb-0 xs:pb-12">
+      <div className="font-bold lg:text-[92px] md:text-[84px] sm:text-[72px] text-[52px] space-y-[-24px] font-firacode items-center my-auto animate-pulse">
         <div className="flex flex-col justify-center">
           <div className="flex flex-col xs:flex-row xs:justify-center md:flex-col items-center mt-[-24px]">
-            <p className="">Want to&nbsp;</p>
-            <p className="flex justify-center text-light-accent dark:text-light-accent md:mt-[-20px] xs:mt-0 mt-[-20px]">
-              build
-            </p>
+            <p className="inline">Want to&nbsp;</p>
+            <Build build="build" />
           </div>
           <div className="flex flex-col xs:flex-row xs:justify-center md:flex-col items-center mt-[-24px]">
             <p>a new&nbsp;</p>
-            <p className="flex justify-center md:pl-16 text-light-accent dark:text-light-accent md:mt-[-20px] xs:mt-0 mt-[-20px]">
-              Project?
-            </p>
+            <Build build="Project" />
           </div>
         </div>
 
         <p className="flex justify-end text-[24px] pt-8 items-start">
-          Or just say
-          <span className="text-light-accent dark:text-light-accent">
-            &nbsp;Hello!
-          </span>
+          Or just say HELLO!
         </p>
       </div>
 
-      <div className="grid grid-rows-12 h-full mb-8 sm:mt-0 mt-[-8px] mx-4">
-        <div className="row-span-3"></div>
-        <a
-          href="mailto:adhikarisamir68@gmail.com"
-          className="row-span-2 text-[28px] text-light-accent dark:text-light-accent hover:underline"
-        >
-          adhikarisamir68@gmail.com
-        </a>
-        <div className="flex row-span-5 justify-between md:mt-0 mt-4">
+      <div className="flex sm:gap-16 gap-8 flex-col h-full lg:mx-4 items-center">
+        <Email />
+
+        <div className="flex md:mt-0 mt-4 w-full gap-12">
           <ul className="flex flex-col space-y-4">
             <li className="flex items-center gap-2  text-[20px] font-semibold hover:scale-105">
               <HiMiniPhone />
               +977 9846983849
             </li>
-            <li>
-              <a
-                href="https://www.facebook.com/samir.adhikari.581187"
-                className="flex items-center gap-2  text-[20px] font-semibold hover:text-light-accentSecondary hover:dark:text-dark-accentSecondary hover:scale-105"
-              >
-                <IoLogoFacebook />
-                Facebook
-              </a>
-            </li>
+
+            <Links
+              link="https://www.facebook.com/samir.adhikari.581187"
+              name="Facebook"
+              logo={<IoLogoFacebook />}
+            />
           </ul>
-          <ul className="flex flex-col space-y-4">
-            <a
-              href="https://www.instagram.com/samir_adhk/"
-              className="flex items-center gap-2 text-[20px] font-semibold hover:text-light-accent hover:scale-105"
-            >
-              <IoLogoInstagram />
-              Instagram
-            </a>
-            <a
-              href="https://www.linkedin.com/in/samir-adhikari-32ba07282/"
-              className="flex items-center gap-2 text-[20px] font-semibold hover:text-light-accent hover:scale-105"
-            >
-              <IoLogoLinkedin />
-              Linkedin
-            </a>
+          <ul className="flex justify-end flex-col space-y-4">
+            <Links
+              link="https://www.instagram.com/samir_adhk/"
+              name="Instagram"
+              logo={<IoLogoInstagram />}
+            />
+
+            <Links
+              link="https://www.linkedin.com/in/samir-adhikari-32ba07282/"
+              name="Linkedin"
+              logo={<IoLogoLinkedin />}
+            />
           </ul>
         </div>
-        <div className="row-span-2"></div>
       </div>
     </div>
   );

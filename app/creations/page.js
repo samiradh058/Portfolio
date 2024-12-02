@@ -16,7 +16,7 @@ const ProjectVariants = {
 };
 
 const childVariants = {
-  hidden: { opacity: 0, x: "50vw" },
+  hidden: { opacity: 0, x: "4vw" },
   visible: {
     opacity: 1,
     x: 0,
@@ -55,7 +55,7 @@ export default function Creations() {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className="mt-16 text-light-text dark:text-dark-text"
+      className="mt-8"
     >
       <h2 className="text-[32px] font-bold">My Latest Noteworthy Projects:</h2>
       <div className="grid md:grid-cols-12 gap-8 mb-12">

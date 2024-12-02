@@ -1,14 +1,15 @@
 "use client";
+import { useTheme } from "@/context/ColorContext";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Suspense } from "react";
+import { colors } from "./colors";
 
 const CertificateVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      type: "spring",
       when: "beforeChildren",
       staggerChildren: 0.2,
     },
@@ -16,18 +17,20 @@ const CertificateVariants = {
 };
 
 const childVariants = {
-  hidden: { opacity: 0, x: "50vw" },
+  hidden: { opacity: 0, x: "10vw" },
   visible: {
     opacity: 1,
     x: 0,
-    transition: {
-      type: "spring",
-      stiffness: 50,
-    },
   },
 };
 
 export default function Certificates() {
+  const { isDark, toggleDarkMode, themeColor } = useTheme();
+
+  const mode = isDark ? "dark" : "light";
+  const currentTheme = themeColor;
+
+  const currentColors = colors[mode][currentTheme];
   const certificates = [
     {
       id: 1,
@@ -56,7 +59,11 @@ export default function Certificates() {
         {certificates.map((certificate) => (
           <motion.div
             variants={childVariants}
-            className="lg:col-span-4 sm:col-span-6 col-span-12 border border-light-border dark:border-dark-border shadow-sm mx-4 sm:mx-0"
+            className="lg:col-span-4 sm:col-span-6 col-span-12 shadow-sm mx-4 sm:mx-0"
+            style={{
+              borderColor: currentColors.border,
+              borderWidth: "1px",
+            }}
             key={certificate.id}
           >
             <div className="relative h-64 w-full">
