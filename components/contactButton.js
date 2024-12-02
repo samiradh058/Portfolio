@@ -31,7 +31,7 @@ export default function ContactButton() {
         className="mt-12 w-fit px-2 py-1 rounded-xl flex items-center font-[20px] md:mb-0 mb-20"
         style={{
           backgroundColor: currentColors.accent,
-          color: currentColors.text,
+          color: isDark ? currentColors.text : currentColors.secondary,
           border: `1px solid ${currentColors.border}`,
         }}
       >

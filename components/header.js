@@ -54,7 +54,7 @@ export default function Header() {
         <Image src="/Krishna.png" alt="Logo" fill required />
       </Link>
 
-      <div className="sm:hidden text-[24px]" onClick={handleClickHam}>
+      <div className="sm:hidden text-[24px] mr-4" onClick={handleClickHam}>
         <motion.div
           variants={iconVariants}
           animate={showNav ? "animate" : "initial"}
