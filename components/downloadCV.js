@@ -31,7 +31,7 @@ export default function DownloadCV() {
         className="mt-8 lg:mt-0 w-fit ml-2 rounded-lg px-2 py-1"
         style={{
           backgroundColor: currentColors.accent,
-          color: currentColors.text,
+          color: isDark ? currentColors.text : currentColors.secondary,
         }}
       >
         {" "}

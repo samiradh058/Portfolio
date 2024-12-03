@@ -64,7 +64,7 @@ export default function Header() {
         </motion.div>
       </div>
 
-      <motion.div
+      <motion.main
         key={showNav}
         className={`${
           showNav ? "block" : "hidden"
@@ -120,7 +120,7 @@ export default function Header() {
             <Link href="/contact">Contact</Link>
           </li>
         </ul>
-      </motion.div>
+      </motion.main>
       <div
         className={`absolute right-2 sm:top-2 top-20 mr-2 text-[32px] text-white border p-1 rounded-full ${
           !isDark ? "bg-yellow-400" : "bg-black"

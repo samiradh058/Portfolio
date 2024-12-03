@@ -12,7 +12,10 @@ export default function Build({ build }) {
   const currentColors = colors[mode][currentTheme];
   return (
     <p className="flex justify-center md:mt-[-20px] xs:mt-0 mt-[-20px]">
-      <span style={{ color: currentColors.accent }}>{build}</span>
+      <span style={{ color: currentColors.accent }}>
+        {" "}
+        {build === "build" ? "\u00A0" + build : build}
+      </span>
     </p>
   );
 }

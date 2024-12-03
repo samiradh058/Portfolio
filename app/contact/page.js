@@ -11,10 +11,10 @@ import {
 export default function Contact() {
   return (
     <div className="flex md:flex-row flex-col sm:justify-around justify-center items-center sm:pb-0 xs:pb-12">
-      <div className="font-bold lg:text-[92px] md:text-[84px] sm:text-[72px] text-[52px] space-y-[-24px] font-firacode items-center my-auto animate-pulse">
+      <div className="font-bold lg:text-[92px] md:text-[84px] sm:text-[72px] text-[52px] space-y-[-24px] font-firacode items-center sm:my-auto mt-[20px] animate-pulse">
         <div className="flex flex-col justify-center">
           <div className="flex flex-col xs:flex-row xs:justify-center md:flex-col items-center mt-[-24px]">
-            <p className="inline">Want to&nbsp;</p>
+            <p className="inline">Want to</p>
             <Build build="build" />
           </div>
           <div className="flex flex-col xs:flex-row xs:justify-center md:flex-col items-center mt-[-24px]">

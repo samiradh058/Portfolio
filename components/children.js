@@ -12,7 +12,7 @@ export default function Children({ children }) {
 
   const currentColors = colors[mode][currentTheme];
   return (
-    <div
+    <main
       className="lg:px-14 md:px-10 sm:px-6 px-4 w-full"
       style={{
         backgroundColor: currentColors.bg,
@@ -22,6 +22,6 @@ export default function Children({ children }) {
     >
       {children}
       <Theme />
-    </div>
+    </main>
   );
 }
