@@ -31,7 +31,8 @@ export default function Skills() {
   const currentTheme = themeColor;
 
   const currentColors = colors[mode][currentTheme];
-  const listStyle = "border px-2 py-1 rounded-md shadow-md";
+  const listStyle =
+    "border px-2 py-1 rounded-md shadow-md sm:text-[16px] text-[12px]";
   const listDynamicStyle = {
     backgroundColor: currentColors.secondary,
     borderColor: currentColors.border,
@@ -48,7 +49,7 @@ export default function Skills() {
       <div className="flex flex-col items-center">
         <h2 className="font-semibold text-[24px]">My Skills</h2>
         <div className="mt-4">
-          <ul className="flex gap-4 justify-center my-4">
+          <ul className="flex xs:gap-2 sm:gap-4 gap-[6px] justify-center my-4">
             <motion.li
               className={listStyle}
               style={listDynamicStyle}
@@ -71,7 +72,7 @@ export default function Skills() {
               JavaScript
             </motion.li>
           </ul>
-          <ul className="flex gap-4 justify-center my-4">
+          <ul className="flex xs:gap-2 sm:gap-4 gap-[6px] justify-center my-4">
             <motion.li
               className={listStyle}
               style={listDynamicStyle}
@@ -108,7 +109,7 @@ export default function Skills() {
               Next.js
             </motion.li>
           </ul>
-          <ul className="flex gap-4 justify-center my-4">
+          <ul className="flex xs:gap-2 sm:gap-4 gap-[6px] justify-center my-4">
             <motion.li
               className={listStyle}
               style={listDynamicStyle}
