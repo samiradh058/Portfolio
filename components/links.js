@@ -4,8 +4,9 @@ import { useTheme } from "@/context/ColorContext";
 
 import { colors } from "./colors";
 
-export default function Links({ links, name, logo }) {
+export default function Links({ link, name, logo }) {
   const { isDark, themeColor } = useTheme();
+  console.log(link);
 
   const mode = isDark ? "dark" : "light";
   const currentTheme = themeColor;
@@ -14,7 +15,7 @@ export default function Links({ links, name, logo }) {
   return (
     <li>
       <a
-        href={links}
+        href={link}
         className="flex items-center gap-2 text-[20px] font-semibold hover:scale-110"
         style={{
           color: currentColors.accentSecondary,
