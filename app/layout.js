@@ -1,7 +1,6 @@
 import "@/app/globals.css";
-import Children from "@/components/children";
-import Header from "@/components/header";
 import { ThemeProvider } from "@/context/ColorContext";
+import Main from "@/components/main";
 
 export const metadata = {
   title: "Samir Adhikari",
@@ -12,10 +11,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <ThemeProvider>
-        <body className="flex flex-col justify-center items-center">
-          <Header />
-          <Children>{children}</Children>
-        </body>
+        <Main>{children}</Main>
       </ThemeProvider>
     </html>
   );
