@@ -28,14 +28,14 @@ export default function DownloadCV() {
       className="w-fit lg:mt-10 flex justify-start items-start"
     >
       <div
-        className="mt-8 lg:mt-0 w-fit ml-2 rounded-lg px-2 py-1"
+        className="mt-8 lg:mt-0 w-fit ml-2 text-[18px] px-4 py-2 rounded-full"
         style={{
           backgroundColor: currentColors.accent,
           color: isDark ? currentColors.text : currentColors.secondary,
         }}
       >
         {" "}
-        <a href="Samir-Adhikari-CV.pdf" download>
+        <a href="Resume.pdf" download>
           Download CV
         </a>
       </div>

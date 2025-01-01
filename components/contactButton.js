@@ -28,7 +28,7 @@ export default function ContactButton() {
     <motion.div variants={buttonVariants} whileHover="hover" className="w-fit">
       <Link
         href="/contact"
-        className="mt-12 w-fit px-2 py-1 rounded-xl flex items-center font-[20px] md:mb-0 mb-20"
+        className="mt-12 w-fit px-4 py-2 rounded-full flex items-center text-[18px] md:mb-0 mb-20"
         style={{
           backgroundColor: currentColors.accent,
           color: isDark ? currentColors.text : currentColors.secondary,

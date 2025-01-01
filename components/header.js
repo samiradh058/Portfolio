@@ -50,7 +50,7 @@ export default function Header() {
       className="flex justify-between w-[100%] items-center z-10 max-h-fit"
       style={{ backgroundColor: currentColors.bg }}
     >
-      <Link href="/home" className="relative sm:h-32 sm:w-28 h-20 w-16">
+      <Link href="/" className="relative sm:h-32 sm:w-28 h-20 w-16">
         <Image src="/Krishna.png" alt="Logo" fill required />
       </Link>
 
